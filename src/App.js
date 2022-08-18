@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -8,6 +9,7 @@ import {
 
 import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
+import UserPlaces from "./places/pages/UserPlaces";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 const App = () => {
@@ -17,6 +19,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Users />} exact />
+          <Route path="/:userId/places" element={<UserPlaces />} exact />
           <Route path="/places/new" element={<NewPlace />} exact />
           <Route path="/" element={<Navigate replace to="/home" />} />
         </Routes>
